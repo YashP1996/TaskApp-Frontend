@@ -1,0 +1,23 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+#read-task-div {
+  border: 1px solid black;
+}
+#read-task-div .container .read-task-head {
+  padding: 20px 0px;
+}
+#read-task-div .container .create-task-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#read-task-div .table {
+  margin: 0px;
+}
