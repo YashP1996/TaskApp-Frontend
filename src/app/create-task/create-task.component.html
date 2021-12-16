@@ -1,0 +1,53 @@
+<app-header></app-header>
+<section id="create-task-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <div class="create-task-form">
+                    <div class="create-task-header">
+                        <h3>{{title_text}}</h3>
+                    </div>
+                    <div class="create-task-body">
+                        <form [formGroup]="createTaskFormGroup" (ngSubmit)="createTask()">
+                            <div class="input-spacer">
+                                <!-- <span>Task Title</span> -->
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <input type="text" id="taskTitle" name="taskTitle" class="form-control"
+                                            placeholder="Task Title" formControlName="taskTitle" autofocus />
+                                        <p class="error" id="username_error"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-spacer">
+                                <!-- <span>Task Description</span> -->
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <textarea id="taskDescription" name="taskDescription" class="form-control"
+                                            placeholder="Task Description" formControlName="taskDescription"></textarea>
+                                        <p class="error" id="password_error"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="taskStatus" id="taskStatus" formControlName="taskStatus"
+                                value="ToDo">
+                            <div class="input-spacer">
+                                <button name="signin" id="signin" class="btn btn-primary shadow-sm">
+                                    ADD TASK
+                                </button>
+                                <p class="error" id="form_error"></p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="create-task-footer">
+                        <div class="input-spacer">
+                            <p><a routerLink="/tasks">See Added Tasks</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+        </div>
+    </div>
+</section>
