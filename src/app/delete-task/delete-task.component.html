@@ -10,8 +10,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="modal-title">Delete Task</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <a class="btn-close" data-bs-dismiss="modal" aria-label="Close" routerLink="/view"></a>
                             </div>
                             <div class="modal-body">
                                 <div class="task-details">
@@ -30,7 +29,7 @@
                                                             <th>Task Status</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody *ngIf="task">
                                                         <tr>
                                                             <td>{{task.taskId}}</td>
                                                             <td>{{task.taskTitle}}</td>
@@ -45,8 +44,10 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <a class="btn btn-primary" data-bs-dismiss="modal" routerLink="/view">Cancel</a>
-                                <button type="button" class="btn btn-primary" (click)="deleteTask()">Delete</button>
+                                <a class="btn btn-primary" data-bs-dismiss="modal" routerLink="/view"><i
+                                        class="fas fa-window-close"></i>&nbsp;&nbsp;CANCEL</a>
+                                <button type="button" class="btn btn-danger" (click)="deleteTask()"><i
+                                        class="fas fa-minus-square"></i>&nbsp;&nbsp;DELETE</button>
                             </div>
                         </div>
                     </div>

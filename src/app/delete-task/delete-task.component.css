@@ -27,3 +27,38 @@ p {
 #delete-task-section .container-fluid .modal .modal-dialog .modal-body .spacer {
   margin: 1rem 0rem 0rem 0rem;
 }
+#delete-task-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-body
+  table
+  thead {
+  background-color: #f4f6f6;
+}
+#delete-task-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-body
+  table
+  thead
+  tr
+  th,
+#delete-task-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-body
+  table
+  tbody
+  tr
+  td {
+  text-align: center;
+  vertical-align: middle;
+}
+.btn {
+  border-radius: 0px;
+  outline: none;
+  box-shadow: none !important;
+}

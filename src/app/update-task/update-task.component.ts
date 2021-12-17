@@ -17,6 +17,7 @@ export class UpdateTaskComponent implements OnInit {
   updateTaskFormGroup!: FormGroup;
   title_text: string = 'Update Task';
   task!: Task;
+  taskId: any;
   constructor(
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
@@ -44,8 +45,8 @@ export class UpdateTaskComponent implements OnInit {
     });
   }
   readTask() {
-    var taskId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.updateTaskService.readTask(taskId).subscribe({
+    this.taskId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.updateTaskService.readTask(this.taskId).subscribe({
       next: (response: any) => {
         this.task = response;
         this.fillUpdateTaskForm(this.task);
@@ -60,9 +61,9 @@ export class UpdateTaskComponent implements OnInit {
     });
   }
   updateTask() {
-    var taskId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.taskId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.updateTaskService
-      .updateTask(taskId, this.updateTaskFormGroup.value)
+      .updateTask(this.taskId, this.updateTaskFormGroup.value)
       .subscribe({
         next: (response: any) => {
           console.log(response);

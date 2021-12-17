@@ -11,6 +11,7 @@ declare var $: any;
 export class DeleteTaskComponent implements OnInit {
   title_text: string = 'Update Task';
   task!: Task;
+  taskId: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private deleteTaskService: DeleteTaskService
@@ -23,8 +24,8 @@ export class DeleteTaskComponent implements OnInit {
     $('#deleteTaskModal').modal('show');
   }
   readTask() {
-    var taskId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.deleteTaskService.readTask(taskId).subscribe({
+    this.taskId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.deleteTaskService.readTask(this.taskId).subscribe({
       next: (response: any) => {
         this.task = response;
         console.log(this.task);
@@ -38,8 +39,8 @@ export class DeleteTaskComponent implements OnInit {
     });
   }
   deleteTask() {
-    var taskId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.deleteTaskService.deleteTask(taskId).subscribe({
+    this.taskId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    this.deleteTaskService.deleteTask(this.taskId).subscribe({
       next: (response: any) => {
         console.log(response);
       },
