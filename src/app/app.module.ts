@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import { ReadTaskComponent } from './read-task/read-task.component';
+import { UpdateTaskComponent } from './update-task/update-task.component';
+import { DeleteTaskComponent } from './delete-task/delete-task.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +17,8 @@ import { ReadTaskComponent } from './read-task/read-task.component';
     HeaderComponent,
     HomeComponent,
     ReadTaskComponent,
+    UpdateTaskComponent,
+    DeleteTaskComponent,
   ],
   imports: [
     BrowserModule,

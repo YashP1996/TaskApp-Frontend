@@ -9,3 +9,6 @@
 .navbar .navbar-brand {
   padding: 0px;
 }
+.table {
+  margin: 0px !important;
+}

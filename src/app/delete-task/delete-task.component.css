@@ -1,0 +1,29 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+ul,
+li,
+p {
+  margin: 0px;
+}
+#delete-task-section .container-fluid .modal .modal-dialog .modal-footer {
+  padding: 1rem;
+}
+#delete-task-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-footer
+  button {
+  margin: 0px;
+}
+#delete-task-section .container-fluid .modal .modal-dialog .modal-footer a {
+  margin: 0rem 1rem 0rem 0rem;
+}
+#delete-task-section .container-fluid .modal .modal-dialog .modal-body .spacer {
+  margin: 1rem 0rem 0rem 0rem;
+}

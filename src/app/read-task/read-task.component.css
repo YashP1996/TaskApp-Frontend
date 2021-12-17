@@ -22,13 +22,23 @@ p {
   border-radius: 10px;
   padding: 1.5rem;
 }
-.read-task .read-task-header {
+.read-task .read-task-header,
+.read-task .read-task-body {
   min-width: 100%;
+}
+.read-task .read-task-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 0rem 1.5rem 0rem;
+  border-bottom: 2px solid #f4f6f6;
 }
 .read-task .read-task-header h3 {
   text-align: center;
 }
-.read-task .read-task-header {
-  padding: 0rem 0rem 1.5rem 0rem;
-  border-bottom: 2px solid #f4f6f6;
+.read-task .read-task-body .spacer {
+  margin: 1.5rem 0rem 0rem 0rem;
+}
+.read-task .read-task-body table tbody tr td {
+  vertical-align: middle;
 }

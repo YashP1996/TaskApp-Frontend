@@ -1,5 +1,5 @@
 <app-header></app-header>
-<section id="create-task-section">
+<section id="update-task-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
@@ -9,7 +9,17 @@
                         <h3>{{title_text}}</h3>
                     </div>
                     <div class="create-task-body">
-                        <form [formGroup]="createTaskFormGroup" (ngSubmit)="createTask()">
+                        <form [formGroup]="updateTaskFormGroup" (ngSubmit)="updateTask()">
+                            <div class="input-spacer">
+                                <!-- <span>Task Id</span> -->
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <input type="text" id="taskId" name="taskId" class="form-control"
+                                            placeholder="Task Id" formControlName="taskId" readonly />
+                                        <p class="error" id="username_error"></p>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="input-spacer">
                                 <!-- <span>Task Title</span> -->
                                 <div class="row">
@@ -30,11 +40,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" name="taskStatus" id="taskStatus" formControlName="taskStatus"
-                                value="ToDo">
+                            <div class="input-spacer">
+                                <!-- <span>Task Status</span> -->
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <input type="text" id="taskStatus" name="taskStatus" class="form-control"
+                                            placeholder="Task Status" formControlName="taskStatus" />
+                                        <p class="error" id="username_error"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <input type="hidden" name="taskStatus" id="taskStatus" formControlName="taskStatus"
+                                value="ToDo"> -->
                             <div class="input-spacer">
                                 <button name="signin" id="signin" class="btn btn-primary shadow-sm">
-                                    ADD TASK
+                                    UPDATE TASK
                                 </button>
                                 <p class="error" id="form_error"></p>
                             </div>
@@ -42,7 +62,7 @@
                     </div>
                     <div class="create-task-footer">
                         <div class="input-spacer">
-                            <p><a routerLink="/view">View Added Tasks</a></p>
+                            <p><a routerLink="/view">View All Tasks</a></p>
                         </div>
                     </div>
                 </div>
