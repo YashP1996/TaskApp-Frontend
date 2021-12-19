@@ -3,4 +3,6 @@ export class Task {
   taskTitle!: any;
   taskDescription!: any;
   taskStatus!: any;
+  taskCreateDate!: Date;
+  taskUpdateDate!: Date;
 }

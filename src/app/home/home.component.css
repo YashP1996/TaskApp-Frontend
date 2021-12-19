@@ -18,10 +18,29 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 80px 0px;
-  border-radius: 10px;
+  margin: 144px 0px 80px 0px;
+  padding: 1.5rem;
+  background-color: #ffffff;
 }
+.task .task-head,
 .task .task-body {
+  min-width: 100%;
+  text-align: center;
+}
+.task .task-head {
+  padding: 0rem 0rem 1.5rem 0rem;
+}
+.task .task-body .create-task,
+.task .task-body .view-task {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.task .task-body .create-task button,
+.task .task-body .view-task button {
+  width: 100%;
+}
+.btn {
+  border-radius: 0px;
 }

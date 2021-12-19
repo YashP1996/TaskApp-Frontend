@@ -5,7 +5,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CreateTaskService } from 'src/services/create-task.service';
+import Swal from 'sweetalert2';
 declare var $: any;
 @Component({
   selector: 'app-create-task',
@@ -20,7 +22,8 @@ export class CreateTaskComponent implements OnInit {
   taskDescriptionValidator: any = false;
   constructor(
     private formBuilder: FormBuilder,
-    private createTaskService: CreateTaskService
+    private createTaskService: CreateTaskService,
+    private router: Router
   ) {
     this.initCreateTaskForm();
   }
@@ -40,6 +43,8 @@ export class CreateTaskComponent implements OnInit {
       taskTitle: new FormControl('', Validators.required),
       taskDescription: new FormControl('', Validators.required),
       taskStatus: new FormControl('ToDo', Validators.required),
+      taskCreateDate: new FormControl(new Date(), Validators.required),
+      taskUpdateDate: new FormControl(new Date(), Validators.required),
     });
   }
   validateCreateTaskForm() {
@@ -87,19 +92,50 @@ export class CreateTaskComponent implements OnInit {
       setTimeout(this.clear_error, 3000);
       return;
     } else {
+      console.log(this.createTaskFormGroup.value);
       this.createTaskService
         .createTask(this.createTaskFormGroup.value)
         .subscribe({
           next: (response: any) => {
             console.log(response);
+            Swal.fire({
+              icon: 'success',
+              title: 'Task Created.',
+              showConfirmButton: true,
+              confirmButtonText: 'OK',
+              allowOutsideClick: false,
+              allowEscapeKey: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['view']);
+              } else if (result.isDenied) {
+              }
+            });
           },
           error: (error: any) => {
             console.log(error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Something Went Wrong.',
+              text: 'Please try again.',
+              showConfirmButton: true,
+              confirmButtonText: 'OK',
+              allowOutsideClick: false,
+              allowEscapeKey: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                this.router.navigate(['home']);
+              } else if (result.isDenied) {
+              }
+            });
           },
           complete: () => {
             console.log('Complete');
           },
         });
     }
+  }
+  navigateHome() {
+    this.router.navigate(['home']);
   }
 }

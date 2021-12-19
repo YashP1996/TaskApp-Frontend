@@ -10,8 +10,18 @@ li,
 p {
   margin: 0px;
 }
+#delete-task-section .container-fluid .modal {
+  background-image: url("../../assets/images/background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 #delete-task-section .container-fluid .modal .modal-dialog .modal-footer {
   padding: 1rem;
+}
+#delete-task-section .container-fluid .modal .modal-dialog .modal-content {
+  border-radius: 0px;
 }
 #delete-task-section
   .container-fluid
@@ -21,7 +31,12 @@ p {
   button {
   margin: 0px;
 }
-#delete-task-section .container-fluid .modal .modal-dialog .modal-footer a {
+#delete-task-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-footer
+  .btn-primary {
   margin: 0rem 1rem 0rem 0rem;
 }
 #delete-task-section .container-fluid .modal .modal-dialog .modal-body .spacer {

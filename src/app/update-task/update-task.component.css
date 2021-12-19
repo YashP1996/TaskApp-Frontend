@@ -26,8 +26,8 @@ p {
   align-items: center;
   justify-content: center;
   margin: 144px 0px 80px 0px;
-  border-radius: 10px;
   padding: 1.5rem;
+  background-color: #ffffff;
 }
 .create-task-form .create-task-header,
 .create-task-form .create-task-body,
@@ -51,7 +51,7 @@ p {
 }
 .create-task-form .create-task-body .form-control,
 .create-task-form .create-task-body .form-select {
-  /* margin: 0.5rem 0rem 0rem 0rem; */
+  margin: 0.5rem 0rem 0rem 0rem;
   border-radius: 0px;
   border: 1px solid #f4f6f6;
   padding: 0.375rem;
@@ -64,7 +64,8 @@ p {
   border: 1px solid #0000ff;
   background-color: #ffffff;
 }
-.create-task-form .create-task-body .input-spacer button {
+.create-task-form .create-task-body .input-spacer button,
+.create-task-form .create-task-footer .input-spacer button {
   border-radius: 0px;
 }
 .create-task-form .create-task-body .input-spacer .error {

@@ -19,12 +19,13 @@ p {
   align-items: center;
   justify-content: center;
   margin: 144px 0px 80px 0px;
-  /* border-radius: 10px; */
   padding: 1.5rem;
+  background-color: #ffffff;
 }
 .read-task .read-task-header,
 .read-task .read-task-body,
-.read-task .read-task-body .search-task {
+.read-task .read-task-body .search-task,
+.read-task .read-task-footer {
   min-width: 100%;
 }
 .read-task .read-task-header {
@@ -37,7 +38,8 @@ p {
 .read-task .read-task-header h3 {
   text-align: center;
 }
-.read-task .read-task-body .spacer {
+.read-task .read-task-body .spacer,
+.read-task .read-task-footer .spacer {
   margin: 1.5rem 0rem 0rem 0rem;
 }
 .read-task .read-task-body table thead {
@@ -58,8 +60,6 @@ p {
 }
 .btn {
   border-radius: 0px;
-  outline: none;
-  box-shadow: none !important;
 }
 .read-task .read-task-body .search-task .form-control {
   border-radius: 0px;
@@ -73,4 +73,7 @@ p {
 .read-task .read-task-body .search-task .form-control:focus {
   border: 1px solid #0000ff;
   background-color: #ffffff;
+}
+.read-task .read-task-footer {
+  text-align: center;
 }

@@ -29,7 +29,7 @@
                                                             <th>Task Status</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody *ngIf="task">
+                                                    <tbody *ngIf="task!=null">
                                                         <tr>
                                                             <td>{{task.taskId}}</td>
                                                             <td>{{task.taskTitle}}</td>
@@ -44,8 +44,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <a class="btn btn-primary" data-bs-dismiss="modal" routerLink="/view"><i
-                                        class="fas fa-window-close"></i>&nbsp;&nbsp;CANCEL</a>
+                                <button type="button" class="btn btn-primary" (click)="redirect()"><i
+                                        class="fas fa-window-close"></i>&nbsp;&nbsp;CANCEL</button>
                                 <button type="button" class="btn btn-danger" (click)="deleteTask()"><i
                                         class="fas fa-minus-square"></i>&nbsp;&nbsp;DELETE</button>
                             </div>

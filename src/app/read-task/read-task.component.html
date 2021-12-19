@@ -4,7 +4,8 @@
         <div class="read-task">
             <div class="read-task-header">
                 <h3>{{title_text}}</h3>
-                <a class="btn btn-primary" routerLink="/create"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;CREATE
+                <a class="btn btn-primary shadow-sm" routerLink="/create"><i
+                        class="fas fa-plus-square"></i>&nbsp;&nbsp;CREATE
                     TASK</a>
             </div>
             <div class="read-task-body">
@@ -27,27 +28,39 @@
                                     <th>Task Id</th>
                                     <th>Task Title</th>
                                     <th>Task Description</th>
+                                    <th>Task Created</th>
+                                    <th>Task Updated</th>
                                     <th>Task Status</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
-                            <tbody *ngIf="filteredTasks">
+                            <tbody *ngIf="filteredTasks!=null">
                                 <tr *ngFor="let task of filteredTasks">
                                     <td>{{task.taskId}}</td>
                                     <td>{{task.taskTitle}}</td>
                                     <td>{{task.taskDescription}}</td>
+                                    <td>{{task.taskCreateDate | date}}</td>
+                                    <td>{{task.taskUpdateDate | date}}</td>
                                     <td>{{task.taskStatus}}</td>
-                                    <td><a class="btn btn-primary" [routerLink]="['/update', task.taskId]"><i
+                                    <td><a class="btn btn-primary shadow-sm" [routerLink]="['/update', task.taskId]"><i
                                                 class="fas fa-pen-square"></i>&nbsp;&nbsp;UPDATE</a>
                                     </td>
-                                    <td><a class="btn btn-danger" [routerLink]="['/delete', task.taskId]"><i
+                                    <td><a class="btn btn-danger shadow-sm" [routerLink]="['/delete', task.taskId]"><i
                                                 class="fas fa-minus-square"></i>&nbsp;&nbsp;DELETE</a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+            <div class="read-task-footer">
+                <div class="spacer">
+                    <p>
+                        <button type="button" class="btn btn-primary shadow-sm" (click)="navigateHome()"><i
+                                class="fas fa-caret-square-left"></i>&nbsp;&nbsp;BACK</button>
+                    </p>
                 </div>
             </div>
         </div>

@@ -32,6 +32,10 @@
                             </div>
                             <input type="hidden" name="taskStatus" id="taskStatus" formControlName="taskStatus"
                                 value="ToDo">
+                            <input type="hidden" name="taskCreateDate" id="taskCreateDate"
+                                formControlName="taskCreateDate" value="">
+                            <input type="hidden" name="taskUpdateDate" id="taskUpdateDate"
+                                formControlName="taskUpdateDate" value="">
                             <div class="input-spacer">
                                 <button name="signin" id="signin" class="btn btn-primary shadow-sm"><i
                                         class="fas fa-plus-square"></i>&nbsp;&nbsp;CREATE
@@ -43,6 +47,12 @@
                     <div class="create-task-footer">
                         <div class="input-spacer">
                             <p><a routerLink="/view">View Added Tasks</a></p>
+                        </div>
+                        <div class="input-spacer">
+                            <p>
+                                <button type="button" class="btn btn-primary shadow-sm" (click)="navigateHome()"><i
+                                        class="fas fa-caret-square-left"></i>&nbsp;&nbsp;CANCEL</button>
+                            </p>
                         </div>
                     </div>
                 </div>

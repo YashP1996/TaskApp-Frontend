@@ -11,57 +11,65 @@
                     <div class="create-task-body">
                         <form [formGroup]="updateTaskFormGroup" (ngSubmit)="updateTask()">
                             <div class="input-spacer">
-                                <!-- <span>Task Id</span> -->
+                                <span>Task Id</span>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <input type="text" id="taskId" name="taskId" class="form-control"
                                             placeholder="Task Id" formControlName="taskId" readonly />
-                                        <p class="error" id="username_error"></p>
+                                        <p class="error" id="taskIdError"></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="input-spacer">
-                                <!-- <span>Task Title</span> -->
+                                <span>Task Title</span>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <input type="text" id="taskTitle" name="taskTitle" class="form-control"
-                                            placeholder="Task Title" formControlName="taskTitle" autofocus />
-                                        <p class="error" id="username_error"></p>
+                                            placeholder="Task Title" formControlName="taskTitle" />
+                                        <p class="error" id="taskTitleError"></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="input-spacer">
-                                <!-- <span>Task Description</span> -->
+                                <span>Task Description</span>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <textarea id="taskDescription" name="taskDescription" class="form-control"
                                             placeholder="Task Description" formControlName="taskDescription"></textarea>
-                                        <p class="error" id="password_error"></p>
+                                        <p class="error" id="taskDescriptionError"></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="input-spacer">
-                                <!-- <span>Task Status</span> -->
+                                <span>Task Status</span>
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                        <input type="text" id="taskStatus" name="taskStatus" class="form-control"
-                                            placeholder="Task Status" formControlName="taskStatus" />
-                                        <p class="error" id="username_error"></p>
+                                        <select class="form-select" id="taskStatus" name="taskStatus"
+                                            formControlName="taskStatus" *ngIf="task!=null">
+                                            <option selected value="{{task.taskStatus}}">{{task.taskStatus}}</option>
+                                            <option value="Todo">Todo</option>
+                                            <option value="Doing">Doing</option>
+                                            <option value="Done">Done</option>
+                                        </select>
+                                        <p class="error" id="taskStatusError"></p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <input type="hidden" name="taskStatus" id="taskStatus" formControlName="taskStatus"
-                                value="ToDo"> -->
+                            <input type="hidden" name="taskUpdateDate" id="taskUpdateDate"
+                                formControlName="taskUpdateDate" value="">
                             <div class="input-spacer">
                                 <button name="signin" id="signin" class="btn btn-primary shadow-sm"><i
                                         class="fas fa-pen-square"></i>&nbsp;&nbsp;UPDATE</button>
-                                <p class="error" id="form_error"></p>
+                                <p class="error" id="updateTaskFormError"></p>
                             </div>
                         </form>
                     </div>
                     <div class="create-task-footer">
                         <div class="input-spacer">
-                            <p><a routerLink="/view">View All Tasks</a></p>
+                            <p>
+                                <button type="button" class="btn btn-primary shadow-sm" (click)="navigateView()"><i
+                                        class="fas fa-caret-square-left"></i>&nbsp;&nbsp;CANCEL</button>
+                            </p>
                         </div>
                     </div>
                 </div>
