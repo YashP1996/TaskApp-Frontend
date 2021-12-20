@@ -86,10 +86,13 @@ export class UpdateTaskComponent implements OnInit {
   }
   fillUpdateTaskForm(task: Task) {
     this.updateTaskFormGroup = this.formBuilder.group({
-      taskId: task.taskId,
-      taskTitle: task.taskTitle,
-      taskDescription: task.taskDescription,
-      taskStatus: task.taskStatus,
+      taskId: new FormControl(task.taskId, Validators.required),
+      taskTitle: new FormControl(task.taskTitle, Validators.required),
+      taskDescription: new FormControl(
+        task.taskDescription,
+        Validators.required
+      ),
+      taskStatus: new FormControl(task.taskStatus, Validators.required),
       taskUpdateDate: new Date(),
     });
   }
@@ -161,7 +164,7 @@ export class UpdateTaskComponent implements OnInit {
             Swal.fire({
               icon: 'error',
               title: 'Something Went Wrong.',
-              text: 'Please try again.',
+              text: error,
               showConfirmButton: true,
               confirmButtonText: 'OK',
               allowOutsideClick: false,
