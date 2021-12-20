@@ -1,5 +1,5 @@
 <app-header></app-header>
-<section id="create-task-section">
+<section id="read-task-section">
     <div class="container">
         <div class="read-task">
             <div class="read-task-header">
@@ -44,20 +44,14 @@
                                     <td>{{task.taskCreateDate | date}}</td>
                                     <td>{{task.taskUpdateDate | date}}</td>
                                     <td>{{task.taskStatus}}</td>
-                                    <td>{{task.projectId}}</td>
+                                    <td><a title="View Project Details"
+                                            [routerLink]="['/project', task.projectId]">{{task.projectId}}</a></td>
                                     <td><a class="btn btn-primary shadow-sm" [routerLink]="['/update', task.taskId]"><i
-                                                class="fas fa-pen-square"></i>&nbsp;&nbsp;UPDATE</a>
-                                    </td>
+                                                class="fas fa-pen-square"></i>&nbsp;&nbsp;UPDATE</a></td>
                                     <td><a class="btn btn-danger shadow-sm" [routerLink]="['/delete', task.taskId]"><i
-                                                class="fas fa-minus-square"></i>&nbsp;&nbsp;DELETE</a>
-                                    </td>
+                                                class="fas fa-minus-square"></i>&nbsp;&nbsp;DELETE</a></td>
                                 </tr>
                             </tbody>
-                            <!-- <tbody *ngIf="filteredTasks==null">
-                                <tr>
-                                    <td>No tasks found.</td>
-                                </tr>
-                            </tbody> -->
                         </table>
                     </div>
                 </div>

@@ -1,0 +1,83 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+ul,
+li,
+p {
+  margin: 0px;
+}
+#read-project-section .container-fluid .modal {
+  background-image: url("../../assets/images/background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#read-project-section .container-fluid .modal .modal-dialog .modal-footer {
+  padding: 1rem;
+}
+#read-project-section .container-fluid .modal .modal-dialog .modal-content {
+  border: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
+}
+#read-project-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-footer
+  button {
+  margin: 0px;
+}
+#read-project-section .container-fluid .modal .modal-dialog .modal-footer {
+  justify-content: center;
+}
+#read-project-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-body
+  .spacer {
+  margin: 1rem 0rem 0rem 0rem;
+}
+#read-project-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-body
+  table
+  thead {
+  background-color: #f4f6f6;
+}
+#read-project-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-body
+  table
+  thead
+  tr
+  th,
+#read-project-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-body
+  table
+  tbody
+  tr
+  td {
+  text-align: center;
+  vertical-align: middle;
+}
+.btn {
+  border-radius: 0px;
+  outline: none;
+  box-shadow: none !important;
+}

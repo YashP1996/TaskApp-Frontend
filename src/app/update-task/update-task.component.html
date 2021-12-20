@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <div class="create-task-form">
-                    <div class="create-task-header">
+                <div class="update-task-form">
+                    <div class="update-task-header">
                         <h3>{{title_text}}</h3>
                     </div>
-                    <div class="create-task-body">
+                    <div class="update-task-body">
                         <form [formGroup]="updateTaskFormGroup" (ngSubmit)="updateTask()">
                             <div class="input-spacer">
                                 <span>Task Id</span>
@@ -64,7 +64,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="create-task-footer">
+                    <div class="update-task-footer">
                         <div class="input-spacer">
                             <p>
                                 <button type="button" class="btn btn-primary shadow-sm" (click)="navigateView()"><i

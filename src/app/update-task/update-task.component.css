@@ -12,7 +12,7 @@ li,
 p {
   margin: 0px;
 }
-.create-task-form {
+.update-task-form {
   -webkit-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.75);
@@ -20,7 +20,7 @@ p {
 
 /* Create Task */
 
-.create-task-form {
+.update-task-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,28 +29,28 @@ p {
   padding: 1.5rem;
   background-color: #ffffff;
 }
-.create-task-form .create-task-header,
-.create-task-form .create-task-body,
-.create-task-form .create-task-footer,
-.create-task-form .create-task-body .input-spacer button {
+.update-task-form .update-task-header,
+.update-task-form .update-task-body,
+.update-task-form .update-task-footer,
+.update-task-form .update-task-body .input-spacer button {
   min-width: 100%;
 }
-.create-task-form .create-task-header h3,
-.create-task-form .create-task-body p,
-.create-task-form .create-task-footer p {
+.update-task-form .update-task-header h3,
+.update-task-form .update-task-body p,
+.update-task-form .update-task-footer p {
   text-align: center;
 }
-.create-task-form .create-task-body .input-spacer,
-.create-task-form .create-task-footer .input-spacer {
+.update-task-form .update-task-body .input-spacer,
+.update-task-form .update-task-footer .input-spacer {
   margin: 1.5rem 0rem 0rem 0rem;
 }
-.create-task-form .create-task-header,
-.create-task-form .create-task-body {
+.update-task-form .update-task-header,
+.update-task-form .update-task-body {
   padding: 0rem 0rem 1.5rem 0rem;
   border-bottom: 2px solid #f4f6f6;
 }
-.create-task-form .create-task-body .form-control,
-.create-task-form .create-task-body .form-select {
+.update-task-form .update-task-body .form-control,
+.update-task-form .update-task-body .form-select {
   margin: 0.5rem 0rem 0rem 0rem;
   border-radius: 0px;
   border: 1px solid #f4f6f6;
@@ -59,22 +59,22 @@ p {
   outline: none;
   box-shadow: none;
 }
-.create-task-form .create-task-body .form-control:focus,
-.create-task-form .create-task-body .form-select:focus {
+.update-task-form .update-task-body .form-control:focus,
+.update-task-form .update-task-body .form-select:focus {
   border: 1px solid #0000ff;
   background-color: #ffffff;
 }
-.create-task-form .create-task-body .input-spacer button,
-.create-task-form .create-task-footer .input-spacer button {
+.update-task-form .update-task-body .input-spacer button,
+.update-task-form .update-task-footer .input-spacer button {
   border-radius: 0px;
 }
-.create-task-form .create-task-body .input-spacer .error {
+.update-task-form .update-task-body .input-spacer .error {
   width: 100%;
   background-color: #ec7063;
   color: #ffffff;
   text-align: left;
 }
-.create-task-form .create-task-body p a,
-.create-task-form .create-task-footer p a {
+.update-task-form .update-task-body p a,
+.update-task-form .update-task-footer p a {
   text-decoration: none;
 }

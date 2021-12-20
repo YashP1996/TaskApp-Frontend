@@ -19,4 +19,14 @@ export class ReadProjectService {
       )
     );
   }
+  readProjectById(projectId: any): Observable<Project> {
+    return <Observable<Project>>(
+      this.httpClient.get(this.readProjectUrl + 'project/' + projectId).pipe(
+        map((response) => {
+          console.log(response);
+          return response;
+        })
+      )
+    );
+  }
 }
