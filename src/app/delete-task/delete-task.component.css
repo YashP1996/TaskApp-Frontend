@@ -76,6 +76,17 @@ p {
   text-align: center;
   vertical-align: middle;
 }
+#delete-task-section
+  .container-fluid
+  .modal
+  .modal-dialog
+  .modal-body
+  table
+  tbody
+  tr
+  td {
+  border-bottom-width: 0.5px;
+}
 .btn {
   border-radius: 0px;
   outline: none;

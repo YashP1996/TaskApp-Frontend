@@ -36,8 +36,7 @@ p {
   min-width: 100%;
 }
 .create-task-form .create-task-header h3,
-.create-task-form .create-task-body p,
-.create-task-form .create-task-footer p {
+.create-task-form .create-task-body p {
   text-align: center;
 }
 .create-task-form .create-task-body .input-spacer,
@@ -73,6 +72,11 @@ p {
   background-color: #ec7063;
   color: #ffffff;
   text-align: left;
+}
+.create-task-form .create-task-footer p {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .create-task-form .create-task-body p a,
 .create-task-form .create-task-footer p a {

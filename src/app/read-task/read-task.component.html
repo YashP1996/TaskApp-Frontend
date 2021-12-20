@@ -44,7 +44,7 @@
                                     <td>{{task.taskCreateDate | date}}</td>
                                     <td>{{task.taskUpdateDate | date}}</td>
                                     <td>{{task.taskStatus}}</td>
-                                    <td><a title="View Project Details"
+                                    <td><a class="no-decoration" title="View Project Details"
                                             [routerLink]="['/project', task.projectId]">{{task.projectId}}</a></td>
                                     <td><a class="btn btn-primary shadow-sm" [routerLink]="['/update', task.taskId]"><i
                                                 class="fas fa-pen-square"></i>&nbsp;&nbsp;UPDATE</a></td>

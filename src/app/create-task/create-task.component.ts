@@ -86,21 +86,18 @@ export class CreateTaskComponent implements OnInit {
         return true;
       }
     });
-    // $('#projectName').blur(() => {
-    //   if ($('#projectName option:selected').val() == '0') {
-    //     this.projectValidator = false;
-    //     this.trigger_error('projectError', 'Please Select Project.');
-    //     setTimeout(this.clear_error, 3000);
-    //     return false;
-    //   } else {
-    //     this.projectValidator = true;
-    //     return true;
-    //   }
-    // });
+    $('#projectName').blur(() => {
+      if ($('#projectName option:selected').val() == 'undefined') {
+        this.projectValidator = false;
+        this.trigger_error('projectError', 'Please Select Project.');
+        setTimeout(this.clear_error, 3000);
+        return false;
+      } else {
+        this.projectValidator = true;
+        return true;
+      }
+    });
   }
-  // selectProject() {
-  //   console.log(this.selectedProject);
-  // }
   readProject() {
     return this.readProjectService.readProject().subscribe({
       next: (response: any) => {
@@ -133,7 +130,7 @@ export class CreateTaskComponent implements OnInit {
     if (
       this.taskTitleValidator == false ||
       this.taskDescriptionValidator == false ||
-      // this.projectValidator == false ||
+      this.projectValidator == false ||
       this.createTaskFormGroup.invalid
     ) {
       this.trigger_error(

@@ -50,6 +50,12 @@ p {
   text-align: center;
   vertical-align: middle;
 }
+.read-task .read-task-body table tbody tr td {
+  border-bottom-width: 0.5px;
+}
+.read-task .read-task-body table tbody tr td .no-decoration {
+  text-decoration: none;
+}
 .read-task .read-task-body .search-task {
   display: flex;
   align-items: center;
