@@ -29,6 +29,7 @@
                                                             <th>Task Created</th>
                                                             <th>Task Updated</th>
                                                             <th>Task Status</th>
+                                                            <th>Project Id</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody *ngIf="task!=null">
@@ -39,6 +40,7 @@
                                                             <td>{{task.taskCreateDate | date}}</td>
                                                             <td>{{task.taskUpdateDate | date}}</td>
                                                             <td>{{task.taskStatus}}</td>
+                                                            <td>{{task.projectId}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

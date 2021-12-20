@@ -5,4 +5,5 @@ export class Task {
   taskStatus!: any;
   taskCreateDate!: Date;
   taskUpdateDate!: Date;
+  projectId!: any;
 }

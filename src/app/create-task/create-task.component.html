@@ -30,6 +30,18 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="input-spacer">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <select [(ngModel)]="selectedProject" class="form-select" id="projectName"
+                                            name="projectName" formControlName="projectName" *ngIf="projects!=null">
+                                            <option *ngFor="let project of projects" [value]="project.projectId">
+                                                {{project.projectName}}</option>
+                                        </select>
+                                        <p class="error" id="projectError"></p>
+                                    </div>
+                                </div>
+                            </div>
                             <input type="hidden" name="taskStatus" id="taskStatus" formControlName="taskStatus"
                                 value="ToDo">
                             <input type="hidden" name="taskCreateDate" id="taskCreateDate"
@@ -37,7 +49,7 @@
                             <input type="hidden" name="taskUpdateDate" id="taskUpdateDate"
                                 formControlName="taskUpdateDate" value="">
                             <div class="input-spacer">
-                                <button name="signin" id="signin" class="btn btn-primary shadow-sm"><i
+                                <button name="createTask" id="createTask" class="btn btn-primary shadow-sm"><i
                                         class="fas fa-plus-square"></i>&nbsp;&nbsp;CREATE
                                     TASK</button>
                                 <p class="error" id="createTaskFormError"></p>

@@ -31,6 +31,7 @@
                                     <th>Task Created</th>
                                     <th>Task Updated</th>
                                     <th>Task Status</th>
+                                    <th>Project Id</th>
                                     <th>Update</th>
                                     <th>Delete</th>
                                 </tr>
@@ -43,6 +44,7 @@
                                     <td>{{task.taskCreateDate | date}}</td>
                                     <td>{{task.taskUpdateDate | date}}</td>
                                     <td>{{task.taskStatus}}</td>
+                                    <td>{{task.projectId}}</td>
                                     <td><a class="btn btn-primary shadow-sm" [routerLink]="['/update', task.taskId]"><i
                                                 class="fas fa-pen-square"></i>&nbsp;&nbsp;UPDATE</a>
                                     </td>

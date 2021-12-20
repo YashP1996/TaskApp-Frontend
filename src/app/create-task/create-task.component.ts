@@ -6,7 +6,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Project } from 'src/classes/project';
 import { CreateTaskService } from 'src/services/create-task.service';
+import { ReadProjectService } from 'src/services/read-project.service';
 import Swal from 'sweetalert2';
 declare var $: any;
 @Component({
@@ -17,18 +19,23 @@ declare var $: any;
 export class CreateTaskComponent implements OnInit {
   createTaskFormGroup!: FormGroup;
   title_text: string = 'Create Task';
+  projects!: Project[];
+  selectedProject: any;
   taskTitleRegex: any = /^([a-zA-Z0-9]{1,40})$/;
   taskTitleValidator: any = false;
   taskDescriptionValidator: any = false;
+  projectValidator: any = false;
   constructor(
     private formBuilder: FormBuilder,
     private createTaskService: CreateTaskService,
+    private readProjectService: ReadProjectService,
     private router: Router
   ) {
     this.initCreateTaskForm();
   }
   ngOnInit(): void {
     this.validateCreateTaskForm();
+    this.readProject();
   }
   trigger_error(error_id: any, error_message: any) {
     $('#' + error_id).fadeIn('slow');
@@ -42,6 +49,7 @@ export class CreateTaskComponent implements OnInit {
     this.createTaskFormGroup = this.formBuilder.group({
       taskTitle: new FormControl('', Validators.required),
       taskDescription: new FormControl('', Validators.required),
+      projectName: new FormControl('', Validators.required),
       taskStatus: new FormControl('ToDo', Validators.required),
       taskCreateDate: new FormControl(new Date(), Validators.required),
       taskUpdateDate: new FormControl(new Date(), Validators.required),
@@ -78,11 +86,54 @@ export class CreateTaskComponent implements OnInit {
         return true;
       }
     });
+    // $('#projectName').blur(() => {
+    //   if ($('#projectName option:selected').val() == '0') {
+    //     this.projectValidator = false;
+    //     this.trigger_error('projectError', 'Please Select Project.');
+    //     setTimeout(this.clear_error, 3000);
+    //     return false;
+    //   } else {
+    //     this.projectValidator = true;
+    //     return true;
+    //   }
+    // });
+  }
+  // selectProject() {
+  //   console.log(this.selectedProject);
+  // }
+  readProject() {
+    return this.readProjectService.readProject().subscribe({
+      next: (response: any) => {
+        this.projects = response;
+        console.log(this.projects);
+      },
+      error: (error: any) => {
+        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Server Offline.',
+          text: 'Please start the server.',
+          showConfirmButton: true,
+          confirmButtonText: 'OK',
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.router.navigate(['home']);
+          } else if (result.isDenied) {
+          }
+        });
+      },
+      complete: () => {
+        console.log('Complete');
+      },
+    });
   }
   createTask() {
     if (
       this.taskTitleValidator == false ||
       this.taskDescriptionValidator == false ||
+      // this.projectValidator == false ||
       this.createTaskFormGroup.invalid
     ) {
       this.trigger_error(
@@ -94,7 +145,7 @@ export class CreateTaskComponent implements OnInit {
     } else {
       console.log(this.createTaskFormGroup.value);
       this.createTaskService
-        .createTask(this.createTaskFormGroup.value)
+        .createTask(this.selectedProject, this.createTaskFormGroup.value)
         .subscribe({
           next: (response: any) => {
             console.log(response);

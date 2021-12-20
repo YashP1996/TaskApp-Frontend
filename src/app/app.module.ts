@@ -23,7 +23,7 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }),
     HttpClientModule,
     FormsModule,
   ],
