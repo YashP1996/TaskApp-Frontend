@@ -37,6 +37,7 @@ export class ReadTaskComponent implements OnInit {
     this.readTaskService.readTask().subscribe({
       next: (response: any) => {
         this.tasks = response;
+        // this.tasks.sort((val1, val2)=> {return new Date(val2.taskUpdateDate) - new Date(val1.taskUpdateDate)});
         this.filteredTasks = this.tasks;
         console.log(this.tasks);
       },
@@ -47,7 +48,7 @@ export class ReadTaskComponent implements OnInit {
           title: 'Server Offline.',
           text: 'Please start the server.',
           showConfirmButton: true,
-          confirmButtonText: 'Home',
+          confirmButtonText: 'OK',
           allowOutsideClick: false,
           allowEscapeKey: false,
         }).then((result) => {

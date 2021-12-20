@@ -39,7 +39,7 @@ export class DeleteTaskComponent implements OnInit {
           title: 'Server Offline.',
           text: 'Please start the server.',
           showConfirmButton: true,
-          confirmButtonText: 'Home',
+          confirmButtonText: 'OK',
           allowOutsideClick: false,
           allowEscapeKey: false,
         }).then((result) => {
@@ -70,7 +70,7 @@ export class DeleteTaskComponent implements OnInit {
           title: 'Server Offline.',
           text: 'Please start the server.',
           showConfirmButton: true,
-          confirmButtonText: 'Home',
+          confirmButtonText: 'OK',
           allowOutsideClick: false,
           allowEscapeKey: false,
         }).then((result) => {

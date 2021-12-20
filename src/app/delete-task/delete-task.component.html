@@ -26,6 +26,8 @@
                                                             <th>Task Id</th>
                                                             <th>Task Title</th>
                                                             <th>Task Description</th>
+                                                            <th>Task Created</th>
+                                                            <th>Task Updated</th>
                                                             <th>Task Status</th>
                                                         </tr>
                                                     </thead>
@@ -34,6 +36,8 @@
                                                             <td>{{task.taskId}}</td>
                                                             <td>{{task.taskTitle}}</td>
                                                             <td>{{task.taskDescription}}</td>
+                                                            <td>{{task.taskCreateDate | date}}</td>
+                                                            <td>{{task.taskUpdateDate | date}}</td>
                                                             <td>{{task.taskStatus}}</td>
                                                         </tr>
                                                     </tbody>
