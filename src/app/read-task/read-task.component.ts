@@ -37,8 +37,10 @@ export class ReadTaskComponent implements OnInit {
     this.readTaskService.readTask().subscribe({
       next: (response: any) => {
         this.tasks = response;
-        // this.tasks.sort((val1, val2)=> {return new Date(val2.taskUpdateDate) - new Date(val1.taskUpdateDate)});
         this.filteredTasks = this.tasks;
+        this.filteredTasks.sort((a, b) =>
+          b.taskUpdateDate > a.taskUpdateDate ? 1 : -1
+        );
         console.log(this.tasks);
       },
       error: (error: any) => {

@@ -20,7 +20,7 @@ export class UpdateTaskComponent implements OnInit {
   title_text: string = 'Update Task';
   task!: Task;
   taskId: any;
-  taskTitleRegex: any = /^([a-zA-Z0-9]{1,40})$/;
+  taskTitleRegex: any = /^([a-zA-Z0-9 ]{1,40})$/;
   taskTitleValidator: any = false;
   taskDescriptionValidator: any = false;
   constructor(
@@ -46,7 +46,10 @@ export class UpdateTaskComponent implements OnInit {
   initUpdateTaskForm() {
     this.updateTaskFormGroup = this.formBuilder.group({
       taskId: new FormControl('', Validators.required),
-      taskTitle: new FormControl('', Validators.required),
+      taskTitle: new FormControl('1', [
+        Validators.required,
+        Validators.pattern(this.taskTitleRegex),
+      ]),
       taskDescription: new FormControl('', Validators.required),
       taskStatus: new FormControl('', Validators.required),
       taskUpdateDate: new FormControl('', Validators.required),

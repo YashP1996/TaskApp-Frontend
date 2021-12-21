@@ -21,7 +21,7 @@ export class CreateTaskComponent implements OnInit {
   title_text: string = 'Create Task';
   projects!: Project[];
   selectedProject: any;
-  taskTitleRegex: any = /^([a-zA-Z0-9]{1,40})$/;
+  taskTitleRegex: any = /^([a-zA-Z0-9 ]{1,40})$/;
   taskTitleValidator: any = false;
   taskDescriptionValidator: any = false;
   projectValidator: any = false;

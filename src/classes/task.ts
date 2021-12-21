@@ -1,3 +1,5 @@
+import { Project } from './project';
+
 export class Task {
   taskId!: any;
   taskTitle!: any;
@@ -5,5 +7,5 @@ export class Task {
   taskStatus!: any;
   taskCreateDate!: Date;
   taskUpdateDate!: Date;
-  projectId!: any;
+  project!: Project;
 }
