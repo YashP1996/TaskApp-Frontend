@@ -99,7 +99,10 @@ export class CreateTaskComponent implements OnInit {
       }
     });
     // $('#taskUpdateDate').blur(() => {
-    //   if (new Date($('#taskUpdateDate').val()) < new Date()) {
+    //   if (
+    //     new Date($('#taskUpdateDate').val()).toISOString() <
+    //     new Date().toISOString()
+    //   ) {
     //     this.taskUpdateDateValidator = false;
     //     this.trigger_error(
     //       'taskUpdateDateError',
