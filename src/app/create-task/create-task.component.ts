@@ -25,6 +25,7 @@ export class CreateTaskComponent implements OnInit {
   taskTitleValidator: any = false;
   taskDescriptionValidator: any = false;
   projectValidator: any = false;
+  taskUpdateDateValidator: any = false;
   constructor(
     private formBuilder: FormBuilder,
     private createTaskService: CreateTaskService,
@@ -52,7 +53,7 @@ export class CreateTaskComponent implements OnInit {
       projectName: new FormControl('', Validators.required),
       taskStatus: new FormControl('ToDo', Validators.required),
       taskCreateDate: new FormControl(new Date(), Validators.required),
-      taskUpdateDate: new FormControl(new Date(), Validators.required),
+      taskUpdateDate: new FormControl('', Validators.required),
     });
   }
   validateCreateTaskForm() {
@@ -97,6 +98,20 @@ export class CreateTaskComponent implements OnInit {
         return true;
       }
     });
+    // $('#taskUpdateDate').blur(() => {
+    //   if (new Date($('#taskUpdateDate').val()) < new Date()) {
+    //     this.taskUpdateDateValidator = false;
+    //     this.trigger_error(
+    //       'taskUpdateDateError',
+    //       'Date Cannot Be Less Than Current Date.'
+    //     );
+    //     setTimeout(this.clear_error, 3000);
+    //     return false;
+    //   } else {
+    //     this.taskUpdateDateValidator = true;
+    //     return true;
+    //   }
+    // });
   }
   readProject() {
     return this.readProjectService.readProject().subscribe({

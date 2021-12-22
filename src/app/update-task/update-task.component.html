@@ -55,8 +55,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" name="taskUpdateDate" id="taskUpdateDate"
-                                formControlName="taskUpdateDate" value="">
+                            <div class="input-spacer">
+                                <span>Due Date</span>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                        <input type="datetime-local" id="taskUpdateDate" name="taskUpdateDate"
+                                            class="form-control" placeholder="Due Date"
+                                            formControlName="taskUpdateDate" />
+                                        <p class="error" id="taskUpdateDateError"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <input type="hidden" name="taskUpdateDate" id="taskUpdateDate"
+                                formControlName="taskUpdateDate" value=""> -->
                             <div class="input-spacer">
                                 <button name="signin" id="signin" class="btn btn-primary shadow-sm"><i
                                         class="fas fa-pen-square"></i>&nbsp;&nbsp;UPDATE</button>

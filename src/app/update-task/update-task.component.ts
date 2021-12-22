@@ -96,7 +96,7 @@ export class UpdateTaskComponent implements OnInit {
         Validators.required
       ),
       taskStatus: new FormControl(task.taskStatus, Validators.required),
-      taskUpdateDate: new Date(),
+      taskUpdateDate: new FormControl(task.taskUpdateDate, Validators.required),
     });
   }
   readTask() {
